@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +13,9 @@
     <form action="/upload.php" method="post" enctype="multipart/form-data">
         <label for="pattern">input your pattern</label>
         <input type="file" name="pattern" id="pattern">
-        <small><?php echo $errors['file'] ?? ''?></small>
         <input type="submit" value="search">
+        <br>
+        <small style="color:red"><?php echo $_SESSION['errorsUploadPattern'] ?? ''?></small>
     </form>
 </body>
 </html>
